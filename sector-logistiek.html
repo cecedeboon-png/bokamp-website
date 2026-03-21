@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistiek | Bokamp B.V.</title>
+  <meta name="description" content="Bokamp B.V. - Technische installaties en onderhoud voor logistieke bedrijven en distributiecentra.">
+  <meta property="og:title" content="Logistiek | Bokamp B.V.">
+  <meta property="og:description" content="Sorteerinstallaties, transportbanden en technische systemen voor logistieke operaties.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230C2340'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='%230078C8' font-family='Poppins,sans-serif' font-weight='800' font-size='20'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0C2340; --primary-light: #153A5C; --accent: #0078C8; --accent-hover: #0090E8;
+      --dark: #0A1828; --dark-mid: #111F33; --text: #1A1A2E; --text-mid: #4A5568; --text-light: #718096;
+      --bg: #FFFFFF; --bg-light: #F7F9FC; --bg-muted: #EDF1F7; --border: #DDE3ED;
+      --heading: 'Poppins', sans-serif; --body: 'Open Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    .nav { position: fixed; top: 0; width: 100%; z-index: 200; background: var(--dark); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { font-family: var(--heading); font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-menu { display: flex; gap: 0; align-items: center; list-style: none; }
+    .nav-menu a { display: block; padding: 0 1.1rem; line-height: 70px; text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-menu a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-menu .nav-cta-wrap a { background: var(--accent); color: #fff; line-height: normal; padding: 0.55rem 1.4rem; border-radius: 5px; margin-left: 0.5rem; font-weight: 600; }
+    .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); padding: 0.3rem 0.6rem; border-radius: 3px; font-size: 0.75rem; font-weight: 700; cursor: pointer; margin-left: 0.5rem; font-family: var(--body); }
+    .mobile-btn { display: none; background: none; border: none; cursor: pointer; color: #fff; padding: 0.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-family: var(--heading); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.6rem; }
+    .section-title { font-family: var(--heading); font-size: 1.8rem; font-weight: 700; color: var(--primary); line-height: 1.25; margin-bottom: 1rem; }
+    .sector-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: var(--dark); overflow: hidden; }
+    .sector-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.3); }
+    .sector-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(12,35,64,0.85) 0%, rgba(10,24,40,0.7) 100%); }
+    .sector-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 4rem; width: 100%; }
+    .sector-hero .section-label { color: rgba(255,255,255,0.5); }
+    .sector-hero h1 { font-family: var(--heading); font-size: 2.5rem; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+    .sector-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 600px; line-height: 1.75; }
+    .breadcrumb { margin-bottom: 1.5rem; font-size: 0.85rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb span { color: rgba(255,255,255,0.3); margin: 0 0.5rem; }
+    .sector-content { padding: 4rem 2rem; }
+    .sector-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: start; }
+    .sector-text h2 { font-family: var(--heading); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; margin-top: 2rem; }
+    .sector-text h2:first-child { margin-top: 0; }
+    .sector-text p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+    .sector-text ul { list-style: none; margin: 1rem 0; }
+    .sector-text ul li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; color: var(--text-mid); font-size: 0.9rem; }
+    .sector-text ul li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .sector-sidebar { position: sticky; top: 90px; }
+    .sidebar-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-card h3 { font-family: var(--heading); font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
+    .sidebar-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+    .sidebar-card .btn { margin-top: 1rem; width: 100%; justify-content: center; }
+    .klant-logos-sidebar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .klant-logos-sidebar img { height: 30px; max-width: 100px; object-fit: contain; filter: grayscale(100%) opacity(0.5); transition: filter 0.3s; }
+    .klant-logos-sidebar img:hover { filter: grayscale(0%) opacity(1); }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--heading); font-weight: 600; font-size: 0.95rem; text-decoration: none; border-radius: 5px; padding: 0.85rem 2rem; transition: all 0.25s; border: none; cursor: pointer; }
+    .btn-accent { background: var(--accent); color: #fff; }
+    .btn-accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .cta-banner { position: relative; padding: 5rem 2rem; text-align: center; overflow: hidden; }
+    .cta-banner-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1400&q=80') center/cover no-repeat; filter: brightness(0.25); }
+    .cta-banner-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(12,35,64,0.9), rgba(0,120,200,0.6)); }
+    .cta-banner-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+    .cta-banner h2 { font-family: var(--heading); font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; }
+    .footer { background: var(--dark); padding: 3rem 2rem 1.5rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; }
+    .footer-brand .logo { display: inline-block; margin-bottom: 0.75rem; }
+    .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 280px; }
+    .footer h4 { font-family: var(--heading); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+    .footer ul { list-style: none; } .footer ul li { margin-bottom: 0.5rem; }
+    .footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer ul a:hover { color: #fff; }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; } .mobile-btn { display: block; }
+      .nav-menu.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--dark); padding: 1rem 0; }
+      .nav-menu.open a { line-height: normal; padding: 0.75rem 2rem; }
+      .sector-hero h1 { font-size: 1.8rem; }
+      .sector-grid { grid-template-columns: 1fr; } .sector-sidebar { position: static; }
+      .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    [data-lang="en"] { display: none; }
+    body.en [data-lang="nl"] { display: none; }
+    body.en [data-lang="en"] { display: revert; }
+    body.en span[data-lang="en"], body.en a[data-lang="en"], body.en div[data-lang="en"], body.en p[data-lang="en"], body.en h1[data-lang="en"], body.en h2[data-lang="en"], body.en h3[data-lang="en"] { display: block; }
+    body.en span[data-lang="en"] { display: inline; }
+    span[data-lang="en"], a[data-lang="en"] { display: none; }
+    body.en span[data-lang="nl"], body.en a[data-lang="nl"] { display: none; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">BOKAMP<span>.</span></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html#about"><span data-lang="nl">Over ons</span><span data-lang="en">About us</span></a></li>
+      <li><a href="index.html#diensten"><span data-lang="nl">Specialismen</span><span data-lang="en">Specialisms</span></a></li>
+      <li><a href="index.html#sectoren"><span data-lang="nl">Sectoren</span><span data-lang="en">Sectors</span></a></li>
+      <li><a href="index.html#klanten"><span data-lang="nl">Klanten</span><span data-lang="en">Clients</span></a></li>
+      <li class="nav-cta-wrap"><a href="index.html#contact">Contact</a></li>
+      <li><button class="lang-btn" id="langBtn">EN</button></li>
+    </ul>
+    <button class="mobile-btn" id="mobileBtn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="sector-hero">
+  <div class="sector-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80')"></div>
+  <div class="sector-hero-overlay"></div>
+  <div class="sector-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>/</span>
+      <a href="index.html#sectoren"><span data-lang="nl">Sectoren</span><span data-lang="en">Sectors</span></a><span>/</span>
+      <span data-lang="nl">Logistiek</span><span data-lang="en">Logistics</span>
+    </div>
+    <div class="section-label" data-lang="nl">Logistiek</div>
+    <div class="section-label" data-lang="en">Logistics</div>
+    <h1 data-lang="nl">Technische dienstverlening voor logistieke operaties</h1>
+    <h1 data-lang="en">Technical services for logistics operations</h1>
+    <p data-lang="nl">Van sorteerinstallaties tot pakketautomaten: Bokamp installeert en onderhoudt technische systemen in depots, distributiecentra en sorteercentra door heel Nederland.</p>
+    <p data-lang="en">From sorting installations to parcel lockers: Bokamp installs and maintains technical systems in depots, distribution centres and sorting facilities across the Netherlands.</p>
+  </div>
+</section>
+
+<section class="sector-content">
+  <div class="container">
+    <div class="sector-grid">
+      <div class="sector-text">
+        <h2 data-lang="nl">Wat wij doen in logistiek</h2>
+        <h2 data-lang="en">What we do in logistics</h2>
+        <p data-lang="nl">De logistieke sector draait op betrouwbare technische systemen. Van sorteerlijnen in distributiecentra tot scanapparatuur op depots - stilstand kost direct geld. Bokamp zorgt ervoor dat uw technische infrastructuur operationeel blijft.</p>
+        <p data-lang="en">The logistics sector runs on reliable technical systems. From sorting lines in distribution centres to scanning equipment at depots - downtime directly costs money. Bokamp ensures your technical infrastructure stays operational.</p>
+
+        <h2 data-lang="nl">Onze expertise</h2>
+        <h2 data-lang="en">Our expertise</h2>
+        <ul>
+          <li data-lang="nl">Sorteerinstallaties - installatie, onderhoud en storingsdienst</li>
+          <li data-lang="en">Sorting installations - installation, maintenance and fault service</li>
+          <li data-lang="nl">Transportbanden en conveyorsystemen</li>
+          <li data-lang="en">Conveyor belts and conveyor systems</li>
+          <li data-lang="nl">Scanapparatuur en barcodesystemen</li>
+          <li data-lang="en">Scanning equipment and barcode systems</li>
+          <li data-lang="nl">Pakketautomaten en afhaalpunten</li>
+          <li data-lang="en">Parcel lockers and collection points</li>
+          <li data-lang="nl">Technische systemen op depots en hubs</li>
+          <li data-lang="en">Technical systems at depots and hubs</li>
+          <li data-lang="nl">Preventief en correctief onderhoud op locatie</li>
+          <li data-lang="en">Preventive and corrective on-site maintenance</li>
+        </ul>
+
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Logistiek distributiecentrum" style="max-width:100%;border-radius:8px;margin:1.5rem 0;">
+
+        <h2 data-lang="nl">Waarom logistieke bedrijven kiezen voor Bokamp</h2>
+        <h2 data-lang="en">Why logistics companies choose Bokamp</h2>
+        <p data-lang="nl">In de logistiek telt elke minuut. Een storing aan een sorteerlijn kan de hele keten verstoren. Bokamp biedt snelle responstijden en 24/7 beschikbaarheid. Onze monteurs kennen de urgentie van logistieke operaties en handelen daarnaar.</p>
+        <p data-lang="en">In logistics, every minute counts. A fault in a sorting line can disrupt the entire chain. Bokamp offers fast response times and 24/7 availability. Our technicians understand the urgency of logistics operations and act accordingly.</p>
+
+        <p data-lang="nl">Wij werken met vaste teams die uw installaties kennen. Dat betekent snellere diagnoses, minder herhalingsbezoeken en hogere first-time-fix rates. Gecombineerd met onze landelijke dekking zijn wij de ideale partner voor logistieke organisaties met meerdere locaties.</p>
+        <p data-lang="en">We work with dedicated teams who know your installations. That means faster diagnoses, fewer repeat visits and higher first-time-fix rates. Combined with our national coverage, we are the ideal partner for logistics organisations with multiple locations.</p>
+
+        <h2 data-lang="nl">Landelijke ondersteuning</h2>
+        <h2 data-lang="en">Nationwide support</h2>
+        <p data-lang="nl">Of het nu gaat om een distributiecentrum in Limburg of een sorteercentrum in Groningen - Bokamp is landelijk inzetbaar. Wij begrijpen de planning en logistiek van technisch werk op verspreid liggende locaties en zorgen voor een efficiënte inzet van onze teams.</p>
+        <p data-lang="en">Whether it's a distribution centre in Limburg or a sorting facility in Groningen - Bokamp operates nationwide. We understand the planning and logistics of technical work across dispersed locations and ensure efficient deployment of our teams.</p>
+      </div>
+      <div class="sector-sidebar">
+        <div class="sidebar-card">
+          <h3 data-lang="nl">Klanten in logistiek</h3>
+          <h3 data-lang="en">Logistics clients</h3>
+          <div class="klant-logos-sidebar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/PostNL_logo_fullcolor.svg" alt="PostNL">
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h3 data-lang="nl">Snel contact</h3>
+          <h3 data-lang="en">Quick contact</h3>
+          <p data-lang="nl">Technische uitdaging in uw logistieke operatie? Neem vrijblijvend contact op.</p>
+          <p data-lang="en">Technical challenge in your logistics operation? Get in touch.</p>
+          <a href="index.html#contact" class="btn btn-accent">
+            <span data-lang="nl">Neem contact op</span><span data-lang="en">Get in touch</span>
+          </a>
+        </div>
+        <div class="sidebar-card">
+          <h3 data-lang="nl">Bereikbaarheid</h3>
+          <h3 data-lang="en">Reach us</h3>
+          <p><a href="mailto:info@bokamp.net" style="color:var(--accent);text-decoration:none;">info@bokamp.net</a></p>
+          <p><a href="tel:+31612550442" style="color:var(--text-mid);text-decoration:none;">+31 6 12550442</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content">
+    <h2 data-lang="nl">Technische partner voor uw logistieke operatie?</h2>
+    <h2 data-lang="en">Technical partner for your logistics operation?</h2>
+    <p data-lang="nl">Laat ons kennismaken. Wij denken graag mee over uw technische behoeften.</p>
+    <p data-lang="en">Let's get acquainted. We'd love to discuss your technical needs.</p>
+    <a href="index.html#contact" class="btn btn-accent">
+      <span data-lang="nl">Neem contact op</span><span data-lang="en">Get in touch</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">BOKAMP<span>.</span></a>
+      <p data-lang="nl">Technische installaties, onderhoud en field service voor organisaties met meerdere locaties in Nederland.</p>
+      <p data-lang="en">Technical installations, maintenance and field service for multi-location organisations in the Netherlands.</p>
+    </div>
+    <div>
+      <h4 data-lang="nl">Sectoren</h4><h4 data-lang="en">Sectors</h4>
+      <ul>
+        <li><a href="sector-retail.html">Retail</a></li>
+        <li><a href="sector-logistiek.html" data-lang="nl">Logistiek</a><a href="sector-logistiek.html" data-lang="en">Logistics</a></li>
+        <li><a href="sector-betaaltechnologie.html" data-lang="nl">Betaaltechnologie</a><a href="sector-betaaltechnologie.html" data-lang="en">Payment tech</a></li>
+        <li><a href="sector-facilitair.html" data-lang="nl">Facilitair</a><a href="sector-facilitair.html" data-lang="en">Facilities</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@bokamp.net">info@bokamp.net</a></li>
+        <li><a href="tel:+31612550442">+31 6 12550442</a></li>
+        <li><a href="index.html#contact" data-lang="nl">Contactformulier</a><a href="index.html#contact" data-lang="en">Contact form</a></li>
+        <li><a href="https://linkedin.com/company/bokamp" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-lang="nl">Specialismen</h4><h4 data-lang="en">Specialisms</h4>
+      <ul>
+        <li><a href="index.html#diensten" data-lang="nl">Technische installaties</a><a href="index.html#diensten" data-lang="en">Technical installations</a></li>
+        <li><a href="index.html#diensten" data-lang="nl">Onderhoud &amp; reparatie</a><a href="index.html#diensten" data-lang="en">Maintenance &amp; repair</a></li>
+        <li><a href="index.html#diensten">Field service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bokamp B.V. <span data-lang="nl">Alle rechten voorbehouden.</span><span data-lang="en">All rights reserved.</span></span>
+  </div>
+</footer>
+<script>
+  document.getElementById('mobileBtn').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+  let isEn = false;
+  document.getElementById('langBtn').addEventListener('click', () => {
+    isEn = !isEn; document.body.classList.toggle('en', isEn);
+    document.getElementById('langBtn').textContent = isEn ? 'NL' : 'EN';
+    document.documentElement.lang = isEn ? 'en' : 'nl';
+  });
+</script>
+</body>
+</html>

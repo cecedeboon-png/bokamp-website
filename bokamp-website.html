@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bokamp B.V. | Technische Installaties & Onderhoud</title>
+  <meta name="description" content="Bokamp B.V. - Uw betrouwbare partner voor technische installaties, onderhoud en field service in retail, logistiek en technologie.">
+  <meta property="og:title" content="Bokamp B.V. | Technische Installaties & Onderhoud">
+  <meta property="og:description" content="Uw partner voor technische installaties, onderhoud en field service in heel Nederland.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230C2340'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='%230078C8' font-family='Poppins,sans-serif' font-weight='800' font-size='20'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #0C2340;
+      --primary-light: #153A5C;
+      --accent: #0078C8;
+      --accent-hover: #0090E8;
+      --accent-dark: #005A96;
+      --dark: #0A1828;
+      --dark-mid: #111F33;
+      --text: #1A1A2E;
+      --text-mid: #4A5568;
+      --text-light: #718096;
+      --bg: #FFFFFF;
+      --bg-light: #F7F9FC;
+      --bg-muted: #EDF1F7;
+      --border: #DDE3ED;
+      --orange: #E8792B;
+      --green: #28A745;
+      --heading: 'Poppins', sans-serif;
+      --body: 'Open Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===================== NAV ===================== */
+    .nav {
+      position: fixed; top: 0; width: 100%; z-index: 200;
+      background: var(--dark); transition: background 0.3s;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 70px;
+    }
+    .logo {
+      font-family: var(--heading); font-size: 1.4rem; font-weight: 800;
+      color: #fff; text-decoration: none; letter-spacing: -0.3px;
+    }
+    .logo span { color: var(--accent); }
+    .nav-menu { display: flex; gap: 0; align-items: center; list-style: none; }
+    .nav-menu a {
+      display: block; padding: 0 1.1rem; line-height: 70px;
+      text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s, background 0.2s;
+    }
+    .nav-menu a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-menu .nav-cta-wrap a {
+      background: var(--accent); color: #fff; line-height: normal;
+      padding: 0.55rem 1.4rem; border-radius: 5px; margin-left: 0.5rem; font-weight: 600;
+    }
+    .nav-menu .nav-cta-wrap a:hover { background: var(--accent-hover); }
+    .lang-btn {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7); padding: 0.3rem 0.6rem; border-radius: 3px;
+      font-size: 0.75rem; font-weight: 700; cursor: pointer; margin-left: 0.5rem;
+      transition: all 0.2s; font-family: var(--body);
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.2); color: #fff; }
+    .mobile-btn { display: none; background: none; border: none; cursor: pointer; color: #fff; padding: 0.5rem; }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      position: relative; min-height: 92vh; display: flex; align-items: center;
+      background: var(--dark); overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&q=80') center/cover no-repeat;
+      filter: brightness(0.3);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(12,35,64,0.85) 0%, rgba(10,24,40,0.7) 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
+      padding: 8rem 2rem 5rem; width: 100%;
+    }
+    .hero-content { max-width: 680px; }
+    .hero-badge {
+      display: inline-block; background: rgba(0,120,200,0.2); border: 1px solid rgba(0,120,200,0.3);
+      color: var(--accent); font-family: var(--heading); font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em; padding: 0.4rem 1rem; border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--heading); font-size: 3rem; font-weight: 800;
+      color: #fff; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 1.5rem;
+    }
+    .hero-desc {
+      font-size: 1.1rem; color: rgba(255,255,255,0.7); line-height: 1.75;
+      margin-bottom: 2.5rem; max-width: 560px;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--heading); font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; border-radius: 5px; padding: 0.85rem 2rem;
+      transition: all 0.25s; border: none; cursor: pointer;
+    }
+    .btn-accent { background: var(--accent); color: #fff; }
+    .btn-accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.25); }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      z-index: 2; text-align: center;
+    }
+    .scroll-hint a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; font-weight: 500; }
+    .scroll-hint svg { display: block; margin: 0.3rem auto 0; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+    /* ===================== STATS BAR ===================== */
+    .stats-bar { background: var(--primary); border-bottom: 3px solid var(--accent); }
+    .stats-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 2rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--heading); font-size: 2.2rem; font-weight: 800; color: #fff;
+    }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 0.25rem; }
+
+    /* ===================== ABOUT SPLIT ===================== */
+    .about-split {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 480px;
+    }
+    .about-img {
+      background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80') center/cover no-repeat;
+      min-height: 400px;
+    }
+    .about-text { padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .about-text .section-label { color: var(--accent); }
+    .section-label {
+      font-family: var(--heading); font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: var(--heading); font-size: 1.8rem; font-weight: 700;
+      color: var(--primary); line-height: 1.25; margin-bottom: 1rem;
+    }
+    .about-text p { color: var(--text-mid); margin-bottom: 1rem; font-size: 0.95rem; }
+    .about-text .btn { margin-top: 0.5rem; }
+    .btn-dark { background: var(--primary); color: #fff; }
+    .btn-dark:hover { background: var(--primary-light); }
+
+    /* ===================== DIENSTEN ===================== */
+    .diensten-section { padding: 5rem 2rem; background: var(--bg-light); }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header .section-title { margin-bottom: 0.75rem; }
+    .section-header p { color: var(--text-mid); max-width: 560px; margin: 0 auto; font-size: 0.95rem; }
+    .dienst-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .dienst-card {
+      background: #fff; border-radius: 8px; overflow: hidden;
+      border: 1px solid var(--border); transition: all 0.3s;
+      text-align: center; position: relative;
+    }
+    .dienst-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .dienst-card-img {
+      height: 180px; background-size: cover; background-position: center;
+      position: relative;
+    }
+    .dienst-card-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(12,35,64,0.6));
+    }
+    .dienst-card-body { padding: 1.5rem; }
+    .dienst-icon-wrap {
+      width: 52px; height: 52px; border-radius: 10px; margin: -26px auto 1rem;
+      background: var(--accent); display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .dienst-icon-wrap svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .dienst-card h3 {
+      font-family: var(--heading); font-size: 1rem; font-weight: 700;
+      color: var(--primary); margin-bottom: 0.5rem;
+    }
+    .dienst-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+    .dienst-link {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-family: var(--heading); font-size: 0.8rem; font-weight: 600;
+      color: var(--accent); text-decoration: none; margin-top: 0.75rem;
+      transition: gap 0.2s;
+    }
+    .dienst-link:hover { gap: 0.6rem; }
+
+    /* ===================== USP GRID ===================== */
+    .usp-section { padding: 5rem 2rem; background: var(--dark); }
+    .usp-section .section-label { color: rgba(255,255,255,0.4); }
+    .usp-section .section-title { color: #fff; }
+    .usp-section .section-header p { color: rgba(255,255,255,0.5); }
+    .usp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .usp-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; padding: 1.75rem; transition: all 0.25s;
+    }
+    .usp-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
+    .usp-icon {
+      width: 44px; height: 44px; border-radius: 8px;
+      background: rgba(0,120,200,0.15); display: flex; align-items: center;
+      justify-content: center; margin-bottom: 1rem;
+    }
+    .usp-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .usp-card h3 { font-family: var(--heading); font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+    .usp-card p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
+
+    /* ===================== KLANTEN ===================== */
+    .klanten-section { padding: 4rem 2rem; background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .klanten-row {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 3rem;
+    }
+    .klant-logo {
+      height: 40px; max-width: 140px; object-fit: contain;
+      filter: grayscale(100%) opacity(0.5);
+      transition: filter 0.3s, opacity 0.3s;
+    }
+    .klant-logo:hover { filter: grayscale(0%) opacity(1); }
+    .klant-name {
+      font-family: var(--heading); font-size: 1.05rem; font-weight: 700;
+      color: var(--text-light); transition: color 0.2s; white-space: nowrap;
+    }
+    .klant-name:hover { color: var(--primary); }
+    .klanten-story { padding: 0 2rem 4rem; background: var(--bg); }
+    .klanten-story-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .klanten-story p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1rem; }
+
+    /* ===================== SECTOREN SPLIT ===================== */
+    .sectoren-section { padding: 5rem 2rem; background: var(--bg-light); }
+    .sectoren-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .sector-card {
+      background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);
+      display: grid; grid-template-columns: 200px 1fr; transition: all 0.3s;
+    }
+    .sector-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .sector-card-img { background-size: cover; background-position: center; min-height: 160px; }
+    .sector-card-body { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .sector-card h3 { font-family: var(--heading); font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; }
+    .sector-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.55; }
+    .sector-tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem;
+    }
+    .sector-link {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-family: var(--heading); font-size: 0.8rem; font-weight: 600;
+      color: var(--accent); text-decoration: none; margin-top: 0.75rem;
+      transition: gap 0.2s;
+    }
+    .sector-link:hover { gap: 0.6rem; }
+    .sector-card { cursor: pointer; }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff; border: none;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,120,200,0.3);
+    }
+    .scroll-top.visible { opacity: 1; visibility: visible; }
+    .scroll-top:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    /* Testimonials */
+    .testimonials-section { padding: 5rem 2rem; background: var(--bg-muted); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .testimonial-card {
+      background: #fff; border-radius: 8px; padding: 2rem;
+      border: 1px solid var(--border); position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C'; font-size: 4rem; font-family: Georgia, serif;
+      color: var(--accent); opacity: 0.15; position: absolute; top: 0.5rem; left: 1rem; line-height: 1;
+    }
+    .testimonial-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; font-style: italic; margin-bottom: 1rem; }
+    .testimonial-author { font-family: var(--heading); font-size: 0.85rem; font-weight: 600; color: var(--primary); }
+    .testimonial-role { font-size: 0.78rem; color: var(--text-light); }
+
+    /* ===================== CTA BANNER ===================== */
+    .cta-banner {
+      position: relative; padding: 5rem 2rem; text-align: center; overflow: hidden;
+    }
+    .cta-banner-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1400&q=80') center/cover no-repeat;
+      filter: brightness(0.25);
+    }
+    .cta-banner-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(12,35,64,0.9), rgba(0,120,200,0.6));
+    }
+    .cta-banner-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+    .cta-banner h2 {
+      font-family: var(--heading); font-size: 2rem; font-weight: 700; color: #fff;
+      margin-bottom: 1rem;
+    }
+    .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; font-size: 1rem; }
+
+    /* ===================== CONTACT ===================== */
+    .contact-section { padding: 5rem 2rem; background: var(--bg); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
+    .contact-info h3 { font-family: var(--heading); font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem; }
+    .contact-row { display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .contact-icon-box {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px;
+      background: var(--bg-muted); display: flex; align-items: center; justify-content: center;
+    }
+    .contact-icon-box svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-row strong { display: block; font-size: 0.85rem; color: var(--primary); margin-bottom: 0.1rem; }
+    .contact-row span, .contact-row a { font-size: 0.9rem; color: var(--text-mid); text-decoration: none; }
+    .contact-row a:hover { color: var(--accent); }
+    .contact-form { display: flex; flex-direction: column; gap: 0.8rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem;
+      font-family: var(--body); font-size: 0.9rem; color: var(--text);
+      background: var(--bg-light); transition: border-color 0.2s; width: 100%;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); background: #fff; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--text-light); }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
+    .contact-form .btn { width: 100%; justify-content: center; }
+
+    /* ===================== FOOTER ===================== */
+    .footer { background: var(--dark); padding: 3rem 2rem 1.5rem; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem;
+    }
+    .footer-brand .logo { display: inline-block; margin-bottom: 0.75rem; }
+    .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 280px; }
+    .footer h4 { font-family: var(--heading); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 0.5rem; }
+    .footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer ul a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: rgba(255,255,255,0.3);
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 1024px) {
+      .dienst-grid { grid-template-columns: repeat(2, 1fr); }
+      .usp-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .mobile-btn { display: block; }
+      .nav-menu.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 70px; left: 0; right: 0; background: var(--dark);
+        border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 0;
+      }
+      .nav-menu.open a { line-height: normal; padding: 0.75rem 2rem; }
+      .nav-menu.open .nav-cta-wrap a { margin: 0.5rem 2rem; display: inline-block; }
+      .hero h1 { font-size: 2rem; }
+      .hero { min-height: 80vh; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-split { grid-template-columns: 1fr; }
+      .about-img { min-height: 280px; }
+      .about-text { padding: 3rem 2rem; }
+      .dienst-grid { grid-template-columns: 1fr; }
+      .usp-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .sectoren-grid { grid-template-columns: 1fr; }
+      .sector-card { grid-template-columns: 1fr; }
+      .sector-card-img { min-height: 180px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    /* ===================== LANGUAGE ===================== */
+    [data-lang="en"] { display: none; }
+    body.en [data-lang="nl"] { display: none; }
+    body.en [data-lang="en"] { display: revert; }
+    body.en span[data-lang="en"], body.en a[data-lang="en"],
+    body.en div[data-lang="en"], body.en p[data-lang="en"],
+    body.en h1[data-lang="en"], body.en h2[data-lang="en"],
+    body.en h3[data-lang="en"] { display: block; }
+    body.en span[data-lang="en"] { display: inline; }
+    span[data-lang="en"], a[data-lang="en"] { display: none; }
+    body.en span[data-lang="nl"], body.en a[data-lang="nl"] { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">BOKAMP<span>.</span></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about"><span data-lang="nl">Over ons</span><span data-lang="en">About us</span></a></li>
+      <li><a href="#diensten"><span data-lang="nl">Specialismen</span><span data-lang="en">Specialisms</span></a></li>
+      <li><a href="#sectoren"><span data-lang="nl">Sectoren</span><span data-lang="en">Sectors</span></a></li>
+      <li><a href="#klanten"><span data-lang="nl">Klanten</span><span data-lang="en">Clients</span></a></li>
+      <li class="nav-cta-wrap"><a href="#contact">Contact</a></li>
+      <li><button class="lang-btn" id="langBtn">EN</button></li>
+    </ul>
+    <button class="mobile-btn" id="mobileBtn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge" data-lang="nl">Technische dienstverlening &amp; field service</div>
+      <div class="hero-badge" data-lang="en">Technical services &amp; field service</div>
+      <h1 data-lang="nl">Uw partner voor technische installaties en onderhoud in heel Nederland</h1>
+      <h1 data-lang="en">Your partner for technical installations and maintenance across the Netherlands</h1>
+      <p class="hero-desc" data-lang="nl">Bokamp B.V. installeert, onderhoudt en repareert technische apparatuur voor retailketens, logistieke bedrijven en technologieleveranciers. Flexibel, betrouwbaar en landelijk inzetbaar.</p>
+      <p class="hero-desc" data-lang="en">Bokamp B.V. installs, maintains and repairs technical equipment for retail chains, logistics companies and technology suppliers. Flexible, reliable and nationally deployable.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-accent">
+          <span data-lang="nl">Neem contact op</span><span data-lang="en">Get in touch</span>
+        </a>
+        <a href="#diensten" class="btn btn-outline-white">
+          <span data-lang="nl">Onze specialismen</span><span data-lang="en">Our specialisms</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <a href="#stats">
+      <span data-lang="nl">Naar beneden</span><span data-lang="en">Scroll down</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M5 8l5 5 5-5"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<div class="stats-bar" id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">7+</div>
+      <div class="stat-label" data-lang="nl">Grote opdrachtgevers</div>
+      <div class="stat-label" data-lang="en">Major clients</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-lang="nl">Landelijk</div>
+      <div class="stat-num" data-lang="en">National</div>
+      <div class="stat-label" data-lang="nl">Dekking in Nederland</div>
+      <div class="stat-label" data-lang="en">Coverage in NL</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">&lt; 4 uur</div>
+      <div class="stat-label" data-lang="nl">Responstijd</div>
+      <div class="stat-label" data-lang="en">Response time</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label" data-lang="nl">Beschikbaarheid</div>
+      <div class="stat-label" data-lang="en">Availability</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== OVER ONS ==================== -->
+<div class="about-split" id="about">
+  <div class="about-img"></div>
+  <div class="about-text">
+    <div class="section-label" data-lang="nl">Over Bokamp</div>
+    <div class="section-label" data-lang="en">About Bokamp</div>
+    <h2 class="section-title" data-lang="nl">Technische kracht, flexibel ingezet</h2>
+    <h2 class="section-title" data-lang="en">Technical strength, flexibly deployed</h2>
+    <p data-lang="nl">Bokamp B.V. is een Nederlandse technische dienstverlener gevestigd in Rotterdam en Gorinchem, gespecialiseerd in installatie, onderhoud en field service. Wij werken voor organisaties met tientallen tot honderden locaties die betrouwbare technische ondersteuning nodig hebben - van supermarktketens en logistieke bedrijven tot fabrikanten van betaaltechnologie.</p>
+    <p data-lang="en">Bokamp B.V. is a Dutch technical service provider based in Rotterdam and Gorinchem, specialised in installation, maintenance and field service. We work for organisations with dozens to hundreds of locations that need reliable technical support - from supermarket chains and logistics companies to payment technology manufacturers.</p>
+    <p data-lang="nl">Ons team van ervaren monteurs en technici is landelijk inzetbaar en kent de urgentie van sectoren waar technische beschikbaarheid cruciaal is. Of het nu gaat om een storing aan een kassasysteem, het uitrollen van nieuwe apparatuur over honderden locaties, of structureel onderhoud op vaste locaties - wij leveren.</p>
+    <p data-lang="en">Our team of experienced engineers and technicians operates nationwide and understands the urgency of sectors where technical availability is crucial. Whether it's a POS system fault, rolling out new equipment across hundreds of locations, or structural maintenance at fixed sites - we deliver.</p>
+    <p data-lang="nl">Ons model is bewust compact en flexibel ingericht. Geen managementlagen, geen bureaucratie. U werkt direct met de mensen die het werk uitvoeren. Dat maakt ons snel, scherp geprijsd en wendbaar. Wij zijn trots op de langdurige relaties die wij hebben opgebouwd met onze opdrachtgevers.</p>
+    <p data-lang="en">Our model is deliberately compact and flexible. No management layers, no bureaucracy. You work directly with the people doing the work. That makes us fast, competitively priced and agile. We are proud of the long-term relationships we have built with our clients.</p>
+    <a href="#diensten" class="btn btn-dark">
+      <span data-lang="nl">Bekijk onze specialismen</span><span data-lang="en">View our specialisms</span>
+    </a>
+  </div>
+</div>
+
+<!-- ==================== DIENSTEN ==================== -->
+<section class="diensten-section" id="diensten">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" data-lang="nl">Specialismen</div>
+      <div class="section-label" data-lang="en">Specialisms</div>
+      <h2 class="section-title" data-lang="nl">Onze technische dienstverlening</h2>
+      <h2 class="section-title" data-lang="en">Our technical services</h2>
+      <p data-lang="nl">Van kassasystemen tot sorteerinstallaties: wij installeren, onderhouden en repareren.</p>
+      <p data-lang="en">From POS systems to sorting installations: we install, maintain and repair.</p>
+    </div>
+    <div class="dienst-grid">
+      <div class="dienst-card">
+        <div class="dienst-card-img" style="background-image: url('https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&q=80')"></div>
+        <div class="dienst-card-body">
+          <div class="dienst-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 data-lang="nl">Technische installaties</h3>
+          <h3 data-lang="en">Technical installations</h3>
+          <p data-lang="nl">Installatie van kassasystemen, betaalautomaten, beveiligingssystemen en technische apparatuur op locatie.</p>
+          <p data-lang="en">Installation of POS systems, payment terminals, security systems and technical equipment on-site.</p>
+          <a href="dienst-installaties.html" class="dienst-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="dienst-installaties.html" class="dienst-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="dienst-card">
+        <div class="dienst-card-img" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80')"></div>
+        <div class="dienst-card-body">
+          <div class="dienst-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-lang="nl">Onderhoud &amp; reparatie</h3>
+          <h3 data-lang="en">Maintenance &amp; repair</h3>
+          <p data-lang="nl">Preventief en correctief onderhoud zodat uw apparatuur draait en uw bedrijfsvoering niet stilstaat.</p>
+          <p data-lang="en">Preventive and corrective maintenance to keep your equipment running and operations uninterrupted.</p>
+          <a href="dienst-onderhoud.html" class="dienst-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="dienst-onderhoud.html" class="dienst-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="dienst-card">
+        <div class="dienst-card-img" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80')"></div>
+        <div class="dienst-card-body">
+          <div class="dienst-icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 3 20 16 16 16"/><line x1="1" y1="20" x2="20" y2="20"/><circle cx="7" cy="20" r="2"/><circle cx="17" cy="20" r="2"/></svg>
+          </div>
+          <h3 data-lang="nl">Field service</h3>
+          <h3 data-lang="en">Field service</h3>
+          <p data-lang="nl">Landelijke field service voor fabrikanten en leveranciers die lokale uitvoering nodig hebben.</p>
+          <p data-lang="en">Nationwide field service for manufacturers and suppliers who need local execution.</p>
+          <a href="dienst-fieldservice.html" class="dienst-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="dienst-fieldservice.html" class="dienst-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="dienst-card">
+        <div class="dienst-card-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80')"></div>
+        <div class="dienst-card-body">
+          <div class="dienst-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 data-lang="nl">Operationele ondersteuning</h3>
+          <h3 data-lang="en">Operational support</h3>
+          <p data-lang="nl">Structurele technische ondersteuning als verlengstuk van uw eigen technische afdeling.</p>
+          <p data-lang="en">Structural technical support as an extension of your own technical department.</p>
+          <a href="dienst-ondersteuning.html" class="dienst-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="dienst-ondersteuning.html" class="dienst-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WAAROM / USPs ==================== -->
+<section class="usp-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" data-lang="nl">Waarom Bokamp</div>
+      <div class="section-label" data-lang="en">Why Bokamp</div>
+      <h2 class="section-title" data-lang="nl">Wat ons onderscheidt</h2>
+      <h2 class="section-title" data-lang="en">What sets us apart</h2>
+      <p data-lang="nl">De combinatie van snelheid, flexibiliteit en vakmanschap maakt Bokamp de ideale technische partner.</p>
+      <p data-lang="en">The combination of speed, flexibility and craftsmanship makes Bokamp the ideal technical partner.</p>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 data-lang="nl">Snel inzetbaar</h3>
+        <h3 data-lang="en">Fast deployment</h3>
+        <p data-lang="nl">Flexibele schil waardoor wij binnen uren kunnen opschalen naar uw behoefte.</p>
+        <p data-lang="en">Flexible workforce allowing us to scale up within hours to meet your needs.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 data-lang="nl">Bewezen bij grote namen</h3>
+        <h3 data-lang="en">Proven with major brands</h3>
+        <p data-lang="nl">Ervaring met SLA-eisen en kwaliteitsnormen van Albert Heijn, PostNL, Subway en meer.</p>
+        <p data-lang="en">Experience with SLA requirements and quality standards of Albert Heijn, PostNL, Subway and more.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 data-lang="nl">Landelijke dekking</h3>
+        <h3 data-lang="en">National coverage</h3>
+        <p data-lang="nl">Inzetbaar door heel Nederland. Ideaal voor ketens en multi-locatie organisaties.</p>
+        <p data-lang="en">Deployable throughout the Netherlands. Ideal for chains and multi-location organisations.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3 data-lang="nl">Scherpe tarieven</h3>
+        <h3 data-lang="en">Competitive rates</h3>
+        <p data-lang="nl">Compact bedrijfsmodel zonder onnodige managementlagen. U betaalt voor uitvoering.</p>
+        <p data-lang="en">Compact business model without unnecessary management layers. You pay for execution.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+        </div>
+        <h3 data-lang="nl">Directe lijnen</h3>
+        <h3 data-lang="en">Direct communication</h3>
+        <p data-lang="nl">Korte communicatielijnen. U werkt rechtstreeks met de mensen die het werk doen.</p>
+        <p data-lang="en">Short communication lines. You work directly with the people doing the work.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h3 data-lang="nl">Multi-locatie ervaring</h3>
+        <h3 data-lang="en">Multi-location experience</h3>
+        <p data-lang="nl">Kent de logistiek en planning van projecten over tientallen tot honderden locaties.</p>
+        <p data-lang="en">Understands the logistics and planning of projects across dozens to hundreds of locations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KLANTEN ==================== -->
+<section class="klanten-section" id="klanten">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" data-lang="nl">Klanten</div>
+      <div class="section-label" data-lang="en">Clients</div>
+      <h2 class="section-title" data-lang="nl">Vertrouwd door toonaangevende organisaties</h2>
+      <h2 class="section-title" data-lang="en">Trusted by leading organisations</h2>
+    </div>
+    <div class="klanten-row">
+      <img class="klant-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Diebold_Nixdorf_Holding_Germany_logo.svg" alt="Diebold Nixdorf" title="Diebold Nixdorf">
+      <img class="klant-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Albert_Heijn_Logo.svg" alt="Albert Heijn" title="Albert Heijn">
+      <img class="klant-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/12/PostNL_logo_fullcolor.svg" alt="PostNL" title="PostNL">
+      <img class="klant-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Logo_of_Dirk.svg" alt="Dirk" title="Dirk van den Broek">
+      <img class="klant-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Subway_2016_logo.svg" alt="Subway" title="Subway">
+      <img class="klant-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ea/ICI_Paris_XL_logo.svg" alt="Ici Paris XL" title="Ici Paris XL">
+      <img class="klant-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo_of_Dekamarkt.svg" alt="Deka" title="DekaMarkt">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KLANTEN VERHAAL ==================== -->
+<div class="klanten-story">
+  <div class="klanten-story-inner">
+    <p data-lang="nl">Bokamp werkt voor toonaangevende organisaties in Nederland die vertrouwen op betrouwbare technische ondersteuning. Van Albert Heijn en Dirk tot PostNL en Diebold Nixdorf - onze opdrachtgevers zijn marktleiders die hoge eisen stellen aan kwaliteit, snelheid en beschikbaarheid. Met jarenlange samenwerking hebben wij bewezen dat ons model werkt: persoonlijk, vakkundig en altijd bereikbaar. Veel van onze klantrelaties zijn gestart als eenmalige opdracht en uitgegroeid tot structurele samenwerkingen.</p>
+    <p data-lang="en">Bokamp works for leading organisations in the Netherlands that rely on dependable technical support. From Albert Heijn and Dirk to PostNL and Diebold Nixdorf - our clients are market leaders who demand high standards in quality, speed and availability. With years of collaboration, we have proven that our model works: personal, skilled and always reachable. Many of our client relationships started as one-off projects and grew into long-term partnerships.</p>
+  </div>
+</div>
+
+<!-- ==================== SECTOREN ==================== -->
+<section class="sectoren-section" id="sectoren">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" data-lang="nl">Sectoren</div>
+      <div class="section-label" data-lang="en">Sectors</div>
+      <h2 class="section-title" data-lang="nl">Waar wij actief zijn</h2>
+      <h2 class="section-title" data-lang="en">Where we operate</h2>
+      <p data-lang="nl">Ervaring in sectoren waar technische beschikbaarheid cruciaal is voor de bedrijfsvoering.</p>
+      <p data-lang="en">Experience in sectors where technical availability is crucial for business operations.</p>
+    </div>
+    <div class="sectoren-grid">
+      <a href="sector-retail.html" class="sector-card" style="text-decoration:none;color:inherit;">
+        <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=500&q=80')"></div>
+        <div class="sector-card-body">
+          <div class="sector-tag">Retail</div>
+          <h3 data-lang="nl">Retailketens &amp; supermarkten</h3>
+          <h3 data-lang="en">Retail chains &amp; supermarkets</h3>
+          <p data-lang="nl">Kassasystemen, zelfscankassa's, beveiliging en winkelinrichting voor ketens met tientallen tot honderden locaties.</p>
+          <p data-lang="en">POS systems, self-checkout, security and store equipment for chains with dozens to hundreds of locations.</p>
+          <span class="sector-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <span class="sector-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <a href="sector-logistiek.html" class="sector-card" style="text-decoration:none;color:inherit;">
+        <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80')"></div>
+        <div class="sector-card-body">
+          <div class="sector-tag" data-lang="nl">Logistiek</div>
+          <div class="sector-tag" data-lang="en">Logistics</div>
+          <h3 data-lang="nl">Logistiek &amp; distributie</h3>
+          <h3 data-lang="en">Logistics &amp; distribution</h3>
+          <p data-lang="nl">Sorteerinstallaties, technische systemen op depots en distributiecentra voor logistieke operaties.</p>
+          <p data-lang="en">Sorting facilities, technical systems at depots and distribution centres for logistics operations.</p>
+          <span class="sector-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <span class="sector-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <a href="sector-betaaltechnologie.html" class="sector-card" style="text-decoration:none;color:inherit;">
+        <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80')"></div>
+        <div class="sector-card-body">
+          <div class="sector-tag" data-lang="nl">Betaaltechnologie</div>
+          <div class="sector-tag" data-lang="en">Payment tech</div>
+          <h3 data-lang="nl">POS &amp; betaalsystemen</h3>
+          <h3 data-lang="en">POS &amp; payment systems</h3>
+          <p data-lang="nl">Field service voor fabrikanten van betaalautomaten, kassasystemen en zelfbedieningsapparatuur.</p>
+          <p data-lang="en">Field service for manufacturers of payment terminals, POS systems and self-service equipment.</p>
+          <span class="sector-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <span class="sector-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <a href="sector-facilitair.html" class="sector-card" style="text-decoration:none;color:inherit;">
+        <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80')"></div>
+        <div class="sector-card-body">
+          <div class="sector-tag" data-lang="nl">Facilitair</div>
+          <div class="sector-tag" data-lang="en">Facilities</div>
+          <h3 data-lang="nl">Facilitair &amp; horeca</h3>
+          <h3 data-lang="en">Facilities &amp; hospitality</h3>
+          <p data-lang="nl">Kantoren, horecaketens en franchiseorganisaties met terugkerende technische behoeften.</p>
+          <p data-lang="en">Offices, hospitality chains and franchise organisations with recurring technical needs.</p>
+          <span class="sector-link" data-lang="nl">Lees meer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <span class="sector-link" data-lang="en">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" data-lang="nl">Ervaringen</div>
+      <div class="section-label" data-lang="en">Testimonials</div>
+      <h2 class="section-title" data-lang="nl">Wat onze opdrachtgevers zeggen</h2>
+      <h2 class="section-title" data-lang="en">What our clients say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p data-lang="nl">Bokamp levert altijd. Snelle responstijden, vakkundige monteurs en geen gedoe. Precies wat je nodig hebt als je honderden locaties draaiende moet houden.</p>
+        <p data-lang="en">Bokamp always delivers. Fast response times, skilled technicians and no hassle. Exactly what you need when you have hundreds of locations to keep running.</p>
+        <div class="testimonial-author" data-lang="nl">Operations Manager</div>
+        <div class="testimonial-author" data-lang="en">Operations Manager</div>
+        <div class="testimonial-role" data-lang="nl">Retailketen</div>
+        <div class="testimonial-role" data-lang="en">Retail chain</div>
+      </div>
+      <div class="testimonial-card">
+        <p data-lang="nl">De flexibiliteit van Bokamp is uniek. Van vandaag op morgen extra capaciteit nodig? Geen probleem. Dat maakt het verschil in onze sector.</p>
+        <p data-lang="en">Bokamp's flexibility is unique. Need extra capacity from one day to the next? No problem. That makes the difference in our sector.</p>
+        <div class="testimonial-author" data-lang="nl">Technisch Directeur</div>
+        <div class="testimonial-author" data-lang="en">Technical Director</div>
+        <div class="testimonial-role" data-lang="nl">Logistiek bedrijf</div>
+        <div class="testimonial-role" data-lang="en">Logistics company</div>
+      </div>
+      <div class="testimonial-card">
+        <p data-lang="nl">Wij werken al jaren samen met Bokamp voor onze field service in Nederland. Betrouwbaar, professioneel en altijd bereikbaar. Een echte partner.</p>
+        <p data-lang="en">We have been working with Bokamp for years for our field service in the Netherlands. Reliable, professional and always reachable. A true partner.</p>
+        <div class="testimonial-author" data-lang="nl">Service Manager</div>
+        <div class="testimonial-author" data-lang="en">Service Manager</div>
+        <div class="testimonial-role" data-lang="nl">Betaaltechnologie leverancier</div>
+        <div class="testimonial-role" data-lang="en">Payment technology supplier</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA BANNER ==================== -->
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content">
+    <h2 data-lang="nl">Klaar om samen te werken?</h2>
+    <h2 data-lang="en">Ready to work together?</h2>
+    <p data-lang="nl">Wij zijn uw technische partner. Neem vrijblijvend contact op voor een kennismaking of offerte.</p>
+    <p data-lang="en">We are your technical partner. Contact us for an introduction or quote, no strings attached.</p>
+    <a href="#contact" class="btn btn-accent">
+      <span data-lang="nl">Neem contact op</span><span data-lang="en">Get in touch</span>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title" data-lang="nl">Neem contact met ons op</h2>
+      <h2 class="section-title" data-lang="en">Get in touch with us</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 data-lang="nl">Contactgegevens</h3>
+        <h3 data-lang="en">Contact details</h3>
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong>E-mail</strong>
+            <a href="mailto:info@bokamp.net">info@bokamp.net</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <strong data-lang="nl">Telefoon</strong>
+            <strong data-lang="en">Phone</strong>
+            <span>+31 6 12550442</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong data-lang="nl">Locatie</strong>
+            <strong data-lang="en">Location</strong>
+            <span data-lang="nl">Rotterdam / Gorinchem &mdash; landelijk inzetbaar</span>
+            <span data-lang="en">Rotterdam / Gorinchem &mdash; nationwide</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+          <div>
+            <strong>KVK</strong>
+            <span>84758295</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.btn').innerHTML='Verstuurd!'; setTimeout(()=>{this.reset();this.querySelector('.btn').innerHTML='<span>Verstuur bericht</span>';}, 3000);">
+        <div class="form-row">
+          <input type="text" placeholder="Naam / Name" required>
+          <input type="text" placeholder="Bedrijf / Company">
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="E-mail" required>
+          <input type="tel" placeholder="Telefoon / Phone">
+        </div>
+        <textarea placeholder="Uw bericht / Your message" rows="5"></textarea>
+        <button type="submit" class="btn btn-accent"><span data-lang="nl">Verstuur bericht</span><span data-lang="en">Send message</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">BOKAMP<span>.</span></a>
+      <p data-lang="nl">Technische installaties, onderhoud en field service voor organisaties met meerdere locaties in Nederland.</p>
+      <p data-lang="en">Technical installations, maintenance and field service for multi-location organisations in the Netherlands.</p>
+    </div>
+    <div>
+      <h4 data-lang="nl">Specialismen</h4>
+      <h4 data-lang="en">Specialisms</h4>
+      <ul>
+        <li><a href="dienst-installaties.html" data-lang="nl">Technische installaties</a><a href="dienst-installaties.html" data-lang="en">Technical installations</a></li>
+        <li><a href="dienst-onderhoud.html" data-lang="nl">Onderhoud &amp; reparatie</a><a href="dienst-onderhoud.html" data-lang="en">Maintenance &amp; repair</a></li>
+        <li><a href="dienst-fieldservice.html">Field service</a></li>
+        <li><a href="dienst-ondersteuning.html" data-lang="nl">Operationele ondersteuning</a><a href="dienst-ondersteuning.html" data-lang="en">Operational support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-lang="nl">Sectoren</h4>
+      <h4 data-lang="en">Sectors</h4>
+      <ul>
+        <li><a href="#sectoren">Retail</a></li>
+        <li><a href="#sectoren" data-lang="nl">Logistiek</a><a href="#sectoren" data-lang="en">Logistics</a></li>
+        <li><a href="#sectoren" data-lang="nl">Betaaltechnologie</a><a href="#sectoren" data-lang="en">Payment tech</a></li>
+        <li><a href="#sectoren" data-lang="nl">Facilitair</a><a href="#sectoren" data-lang="en">Facilities</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@bokamp.net">info@bokamp.net</a></li>
+        <li><a href="tel:+31612550442">+31 6 12550442</a></li>
+        <li><a href="#contact" data-lang="nl">Contactformulier</a><a href="#contact" data-lang="en">Contact form</a></li>
+        <li><a href="https://linkedin.com/company/bokamp" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bokamp B.V. <span data-lang="nl">Alle rechten voorbehouden.</span><span data-lang="en">All rights reserved.</span></span>
+    <span data-lang="nl">KVK: 84758295</span>
+    <span data-lang="en">CoC: 84758295</span>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll naar boven">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+  // Nav scroll + scroll-to-top visibility
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').style.background = window.scrollY > 50
+      ? 'rgba(10,24,40,0.98)' : 'rgba(10,24,40,0.85)';
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile menu
+  document.getElementById('mobileBtn').addEventListener('click', () => {
+    document.getElementById('navMenu').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-menu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navMenu').classList.remove('open'));
+  });
+
+  // Language toggle
+  let isEn = false;
+  document.getElementById('langBtn').addEventListener('click', () => {
+    isEn = !isEn;
+    document.body.classList.toggle('en', isEn);
+    document.getElementById('langBtn').textContent = isEn ? 'NL' : 'EN';
+    document.documentElement.lang = isEn ? 'en' : 'nl';
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.dienst-card, .usp-card, .sector-card, .stat-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    obs.observe(el);
+  });
+</script>
+
+</body>
+</html>

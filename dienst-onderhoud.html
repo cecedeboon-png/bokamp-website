@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onderhoud & Reparatie | Bokamp B.V.</title>
+  <meta name="description" content="Bokamp B.V. - Preventief en correctief onderhoud, SLA-gebonden service en 24/7 beschikbaarheid voor technische installaties door heel Nederland.">
+  <meta property="og:title" content="Onderhoud & Reparatie | Bokamp B.V.">
+  <meta property="og:description" content="Preventief en correctief onderhoud, storingsdienst en SLA-gebonden service voor uw technische installaties.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230C2340'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='%230078C8' font-family='Poppins,sans-serif' font-weight='800' font-size='20'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0C2340; --primary-light: #153A5C; --accent: #0078C8; --accent-hover: #0090E8;
+      --dark: #0A1828; --dark-mid: #111F33; --text: #1A1A2E; --text-mid: #4A5568; --text-light: #718096;
+      --bg: #FFFFFF; --bg-light: #F7F9FC; --bg-muted: #EDF1F7; --border: #DDE3ED;
+      --heading: 'Poppins', sans-serif; --body: 'Open Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .nav { position: fixed; top: 0; width: 100%; z-index: 200; background: var(--dark); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { font-family: var(--heading); font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -0.3px; }
+    .logo span { color: var(--accent); }
+    .nav-menu { display: flex; gap: 0; align-items: center; list-style: none; }
+    .nav-menu a { display: block; padding: 0 1.1rem; line-height: 70px; text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-menu a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-menu .nav-cta-wrap a { background: var(--accent); color: #fff; line-height: normal; padding: 0.55rem 1.4rem; border-radius: 5px; margin-left: 0.5rem; font-weight: 600; }
+    .nav-menu .nav-cta-wrap a:hover { background: var(--accent-hover); }
+    .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); padding: 0.3rem 0.6rem; border-radius: 3px; font-size: 0.75rem; font-weight: 700; cursor: pointer; margin-left: 0.5rem; transition: all 0.2s; font-family: var(--body); }
+    .lang-btn:hover { background: rgba(255,255,255,0.2); color: #fff; }
+    .mobile-btn { display: none; background: none; border: none; cursor: pointer; color: #fff; padding: 0.5rem; }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-family: var(--heading); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.6rem; }
+    .section-title { font-family: var(--heading); font-size: 1.8rem; font-weight: 700; color: var(--primary); line-height: 1.25; margin-bottom: 1rem; }
+
+    .sector-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: var(--dark); overflow: hidden; }
+    .sector-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.3); }
+    .sector-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(12,35,64,0.85) 0%, rgba(10,24,40,0.7) 100%); }
+    .sector-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 4rem; width: 100%; }
+    .sector-hero .section-label { color: rgba(255,255,255,0.5); }
+    .sector-hero h1 { font-family: var(--heading); font-size: 2.5rem; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+    .sector-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 600px; line-height: 1.75; }
+    .breadcrumb { margin-bottom: 1.5rem; font-size: 0.85rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb span { color: rgba(255,255,255,0.3); margin: 0 0.5rem; }
+
+    .sector-content { padding: 4rem 2rem; }
+    .sector-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: start; }
+    .sector-text h2 { font-family: var(--heading); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; margin-top: 2rem; }
+    .sector-text h2:first-child { margin-top: 0; }
+    .sector-text p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+    .sector-text ul { list-style: none; margin: 1rem 0; }
+    .sector-text ul li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; color: var(--text-mid); font-size: 0.9rem; }
+    .sector-text ul li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    .sector-sidebar { position: sticky; top: 90px; }
+    .sidebar-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-card h3 { font-family: var(--heading); font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
+    .sidebar-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+    .sidebar-card .btn { margin-top: 1rem; width: 100%; justify-content: center; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--heading); font-weight: 600; font-size: 0.95rem; text-decoration: none; border-radius: 5px; padding: 0.85rem 2rem; transition: all 0.25s; border: none; cursor: pointer; }
+    .btn-accent { background: var(--accent); color: #fff; }
+    .btn-accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-dark { background: var(--primary); color: #fff; }
+    .btn-dark:hover { background: var(--primary-light); }
+
+    .cta-banner { position: relative; padding: 5rem 2rem; text-align: center; overflow: hidden; }
+    .cta-banner-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1400&q=80') center/cover no-repeat; filter: brightness(0.25); }
+    .cta-banner-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(12,35,64,0.9), rgba(0,120,200,0.6)); }
+    .cta-banner-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+    .cta-banner h2 { font-family: var(--heading); font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; font-size: 1rem; }
+
+    .footer { background: var(--dark); padding: 3rem 2rem 1.5rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; }
+    .footer-brand .logo { display: inline-block; margin-bottom: 0.75rem; }
+    .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 280px; }
+    .footer h4 { font-family: var(--heading); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 0.5rem; }
+    .footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer ul a:hover { color: #fff; }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .mobile-btn { display: block; }
+      .nav-menu.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem 0; }
+      .nav-menu.open a { line-height: normal; padding: 0.75rem 2rem; }
+      .sector-hero h1 { font-size: 1.8rem; }
+      .sector-grid { grid-template-columns: 1fr; }
+      .sector-sidebar { position: static; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    [data-lang="en"] { display: none; }
+    body.en [data-lang="nl"] { display: none; }
+    body.en [data-lang="en"] { display: revert; }
+    body.en span[data-lang="en"], body.en a[data-lang="en"], body.en div[data-lang="en"], body.en p[data-lang="en"], body.en h1[data-lang="en"], body.en h2[data-lang="en"], body.en h3[data-lang="en"] { display: block; }
+    body.en span[data-lang="en"] { display: inline; }
+    span[data-lang="en"], a[data-lang="en"] { display: none; }
+    body.en span[data-lang="nl"], body.en a[data-lang="nl"] { display: none; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">BOKAMP<span>.</span></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html#about"><span data-lang="nl">Over ons</span><span data-lang="en">About us</span></a></li>
+      <li><a href="index.html#diensten"><span data-lang="nl">Specialismen</span><span data-lang="en">Specialisms</span></a></li>
+      <li><a href="index.html#sectoren"><span data-lang="nl">Sectoren</span><span data-lang="en">Sectors</span></a></li>
+      <li><a href="index.html#klanten"><span data-lang="nl">Klanten</span><span data-lang="en">Clients</span></a></li>
+      <li class="nav-cta-wrap"><a href="index.html#contact">Contact</a></li>
+      <li><button class="lang-btn" id="langBtn">EN</button></li>
+    </ul>
+    <button class="mobile-btn" id="mobileBtn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="sector-hero">
+  <div class="sector-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1600&q=80')"></div>
+  <div class="sector-hero-overlay"></div>
+  <div class="sector-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html"><span data-lang="nl">Home</span><span data-lang="en">Home</span></a>
+      <span>/</span>
+      <a href="index.html#diensten"><span data-lang="nl">Specialismen</span><span data-lang="en">Specialisms</span></a>
+      <span>/</span>
+      <span data-lang="nl">Onderhoud &amp; Reparatie</span><span data-lang="en">Maintenance &amp; Repair</span>
+    </div>
+    <div class="section-label"><span data-lang="nl">Specialisme</span><span data-lang="en">Specialism</span></div>
+    <h1 data-lang="nl">Onderhoud &amp; reparatie</h1>
+    <h1 data-lang="en">Maintenance &amp; repair</h1>
+    <p data-lang="nl">Preventief en correctief onderhoud voor al uw technische installaties. Met SLA-gebonden service, 24/7 bereikbaarheid en snelle responstijden door heel Nederland.</p>
+    <p data-lang="en">Preventive and corrective maintenance for all your technical installations. With SLA-based service, 24/7 availability and fast response times throughout the Netherlands.</p>
+  </div>
+</section>
+
+<section class="sector-content">
+  <div class="container">
+    <div class="sector-grid">
+      <div class="sector-text">
+        <h2 data-lang="nl">Wat wij doen</h2>
+        <h2 data-lang="en">What we do</h2>
+        <p data-lang="nl">Technische apparatuur is het kloppend hart van uw bedrijfsvoering. Uitval betekent omzetverlies, ontevreden klanten en operationele verstoringen. Bokamp zorgt ervoor dat uw systemen optimaal blijven functioneren met een combinatie van planmatig preventief onderhoud en snelle correctieve interventies bij storingen.</p>
+        <p data-lang="en">Technical equipment is the beating heart of your operations. Downtime means revenue loss, dissatisfied customers and operational disruptions. Bokamp ensures your systems continue to perform optimally through a combination of planned preventive maintenance and fast corrective interventions when failures occur.</p>
+
+        <p data-lang="nl">Wij onderhouden en repareren een breed scala aan technische installaties: van kassasystemen en betaalautomaten tot beveiligingsapparatuur, digital signage en logistieke systemen. Altijd op locatie, altijd met vakmanschap.</p>
+        <p data-lang="en">We maintain and repair a wide range of technical installations: from POS systems and payment terminals to security equipment, digital signage and logistics systems. Always on-site, always with craftsmanship.</p>
+
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80" alt="Technisch onderhoud op locatie" style="max-width:100%; border-radius:8px; margin: 1.5rem 0;">
+
+        <h2 data-lang="nl">Onze expertise</h2>
+        <h2 data-lang="en">Our expertise</h2>
+        <ul>
+          <li data-lang="nl">Preventief onderhoud (planmatig) - periodiek onderhoud volgens vast schema</li>
+          <li data-lang="en">Preventive maintenance (planned) - periodic maintenance on a fixed schedule</li>
+          <li data-lang="nl">Correctief onderhoud (storingen) - snelle respons bij onverwachte uitval</li>
+          <li data-lang="en">Corrective maintenance (failures) - fast response to unexpected downtime</li>
+          <li data-lang="nl">SLA-gebonden onderhoud - gegarandeerde respons- en oplostijden</li>
+          <li data-lang="en">SLA-based maintenance - guaranteed response and resolution times</li>
+          <li data-lang="nl">Periodieke inspecties - systematische controle van uw installaties</li>
+          <li data-lang="en">Periodic inspections - systematic checks of your installations</li>
+          <li data-lang="nl">Software updates op locatie - firmware en applicatie-updates ter plaatse</li>
+          <li data-lang="en">On-site software updates - firmware and application updates on location</li>
+          <li data-lang="nl">Vervanging van onderdelen - snel en vakkundig componenten vervangen</li>
+          <li data-lang="en">Component replacement - fast and expert replacement of parts</li>
+          <li data-lang="nl">Rapportage en documentatie - volledige vastlegging van alle werkzaamheden</li>
+          <li data-lang="en">Reporting and documentation - complete records of all work performed</li>
+        </ul>
+
+        <h2 data-lang="nl">24/7 beschikbaarheid en snelle respons</h2>
+        <h2 data-lang="en">24/7 availability and fast response</h2>
+        <p data-lang="nl">Storingen houden zich niet aan kantoortijden. Daarom is Bokamp 24 uur per dag, 7 dagen per week bereikbaar voor urgente storingen. Onze technici zijn strategisch verspreid over Nederland, waardoor wij korte aanrijtijden kunnen garanderen. Bij een storing nemen wij direct actie: diagnose op afstand waar mogelijk, een monteur op locatie waar nodig.</p>
+        <p data-lang="en">Failures don't follow office hours. That's why Bokamp is available 24 hours a day, 7 days a week for urgent breakdowns. Our technicians are strategically distributed across the Netherlands, allowing us to guarantee short arrival times. When a failure occurs, we take immediate action: remote diagnosis where possible, an engineer on-site where needed.</p>
+
+        <p data-lang="nl">Door slim te plannen en voorraad van veelgebruikte onderdelen aan te houden, lossen wij het merendeel van de storingen op bij het eerste bezoek. Dat bespaart u tijd, geld en frustratie.</p>
+        <p data-lang="en">By planning smartly and keeping stock of commonly used parts, we resolve the majority of failures on the first visit. This saves you time, money and frustration.</p>
+
+        <h2 data-lang="nl">SLA-compliance en rapportage</h2>
+        <h2 data-lang="en">SLA compliance and reporting</h2>
+        <p data-lang="nl">Veel van onze opdrachtgevers werken met strikte Service Level Agreements. Bokamp is gewend aan het werken binnen SLA-kaders en rapporteert transparant over responstijden, oplostijden en uitgevoerde werkzaamheden. U ontvangt periodieke overzichten en kunt op elk moment inzicht krijgen in de status van uw installaties.</p>
+        <p data-lang="en">Many of our clients work with strict Service Level Agreements. Bokamp is accustomed to working within SLA frameworks and reports transparently on response times, resolution times and work performed. You receive periodic overviews and can gain insight into the status of your installations at any time.</p>
+
+        <p data-lang="nl">Onze compacte organisatie betekent korte lijnen en directe communicatie. Geen bureaucratie, geen doorverbinden naar een helpdesk. U spreekt met de mensen die het werk daadwerkelijk uitvoeren.</p>
+        <p data-lang="en">Our compact organisation means short lines and direct communication. No bureaucracy, no being transferred to a helpdesk. You speak with the people who actually carry out the work.</p>
+      </div>
+      <div class="sector-sidebar">
+        <div class="sidebar-card">
+          <h3 data-lang="nl">Snel contact</h3>
+          <h3 data-lang="en">Quick contact</h3>
+          <p data-lang="nl">Storing of behoefte aan planmatig onderhoud? Neem direct contact op met onze technici.</p>
+          <p data-lang="en">Experiencing a breakdown or need planned maintenance? Contact our technicians directly.</p>
+          <a href="index.html#contact" class="btn btn-accent">
+            <span data-lang="nl">Neem contact op</span><span data-lang="en">Get in touch</span>
+          </a>
+        </div>
+        <div class="sidebar-card">
+          <h3 data-lang="nl">Bereikbaarheid</h3>
+          <h3 data-lang="en">Reach us</h3>
+          <p><a href="mailto:info@bokamp.net" style="color:var(--accent);text-decoration:none;">info@bokamp.net</a></p>
+          <p><a href="tel:+31612550442" style="color:var(--text-mid);text-decoration:none;">+31 6 12550442</a></p>
+          <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--text-light);">KVK 84758295</p>
+        </div>
+        <div class="sidebar-card">
+          <h3 data-lang="nl">Waarom Bokamp?</h3>
+          <h3 data-lang="en">Why Bokamp?</h3>
+          <ul style="list-style:none; margin:0; padding:0;">
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="nl"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> 24/7 storingsdienst</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="en"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> 24/7 breakdown service</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="nl"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> Landelijke dekking</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="en"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> National coverage</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="nl"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> SLA-compliant</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="en"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> SLA-compliant</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="nl"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> First-time-fix focus</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="en"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> First-time-fix focus</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="nl"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> Transparante rapportage</li>
+            <li style="padding:0.4rem 0 0.4rem 1.2rem; position:relative; color:var(--text-mid); font-size:0.85rem;" data-lang="en"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">&#10003;</span> Transparent reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content">
+    <h2 data-lang="nl">Betrouwbaar onderhoud voor uw installaties?</h2>
+    <h2 data-lang="en">Reliable maintenance for your installations?</h2>
+    <p data-lang="nl">Bespreek uw onderhoudsbehoefte vrijblijvend met ons. Wij denken graag mee over een passende onderhoudsoplossing.</p>
+    <p data-lang="en">Discuss your maintenance needs with us, no strings attached. We'd love to help find the right maintenance solution.</p>
+    <a href="index.html#contact" class="btn btn-accent">
+      <span data-lang="nl">Neem contact op</span><span data-lang="en">Get in touch</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">BOKAMP<span>.</span></a>
+      <p data-lang="nl">Technische installaties, onderhoud en field service voor organisaties met meerdere locaties in Nederland.</p>
+      <p data-lang="en">Technical installations, maintenance and field service for multi-location organisations in the Netherlands.</p>
+    </div>
+    <div>
+      <h4 data-lang="nl">Sectoren</h4><h4 data-lang="en">Sectors</h4>
+      <ul>
+        <li><a href="sector-retail.html">Retail</a></li>
+        <li><a href="sector-logistiek.html" data-lang="nl">Logistiek</a><a href="sector-logistiek.html" data-lang="en">Logistics</a></li>
+        <li><a href="sector-betaaltechnologie.html" data-lang="nl">Betaaltechnologie</a><a href="sector-betaaltechnologie.html" data-lang="en">Payment tech</a></li>
+        <li><a href="sector-facilitair.html" data-lang="nl">Facilitair</a><a href="sector-facilitair.html" data-lang="en">Facilities</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@bokamp.net">info@bokamp.net</a></li>
+        <li><a href="tel:+31612550442">+31 6 12550442</a></li>
+        <li><a href="index.html#contact" data-lang="nl">Contactformulier</a><a href="index.html#contact" data-lang="en">Contact form</a></li>
+        <li><a href="https://linkedin.com/company/bokamp" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-lang="nl">Specialismen</h4><h4 data-lang="en">Specialisms</h4>
+      <ul>
+        <li><a href="index.html#diensten" data-lang="nl">Technische installaties</a><a href="index.html#diensten" data-lang="en">Technical installations</a></li>
+        <li><a href="dienst-onderhoud.html" data-lang="nl">Onderhoud &amp; reparatie</a><a href="dienst-onderhoud.html" data-lang="en">Maintenance &amp; repair</a></li>
+        <li><a href="index.html#diensten">Field service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bokamp B.V. KVK 84758295. <span data-lang="nl">Alle rechten voorbehouden.</span><span data-lang="en">All rights reserved.</span></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobileBtn').addEventListener('click', () => {
+    document.getElementById('navMenu').classList.toggle('open');
+  });
+  let isEn = false;
+  document.getElementById('langBtn').addEventListener('click', () => {
+    isEn = !isEn;
+    document.body.classList.toggle('en', isEn);
+    document.getElementById('langBtn').textContent = isEn ? 'NL' : 'EN';
+    document.documentElement.lang = isEn ? 'en' : 'nl';
+  });
+</script>
+</body>
+</html>
